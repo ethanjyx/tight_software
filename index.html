@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tight Software</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0a0a0a;
+      color: #fafafa;
+      font-family: 'Space Grotesk', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .grain {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #404040;
+      position: absolute;
+      top: 2.5rem;
+      font-weight: 500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-desc {
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: none;
+      color: #525252;
+      font-weight: 300;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .section-label {
+      font-size: 1.1rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: #525252;
+      margin-bottom: 3.5rem;
+      font-weight: 500;
+    }
+
+    .products {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .product-link {
+      text-decoration: none;
+      color: #fafafa;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .product-name {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(2.5rem, 7vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fafafa 0%, #a3a3a3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .product-link:hover .product-name {
+      background: linear-gradient(135deg, #fafafa 0%, #5B60F8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: #262626;
+    }
+  </style>
+</head>
+<body>
+  <div class="grain"></div>
+  <div class="logo">
+    <span>Tight Software</span>
+    <span class="logo-desc">Delightful products for visual storytellers</span>
+  </div>
+
+  <div class="content">
+    <p class="section-label">Products</p>
+    <div class="products">
+      <a href="https://tight.studio/" class="product-link" target="_blank" rel="noopener">
+        <div class="product-name">Tight Studio</div>
+      </a>
+      <div class="divider"></div>
+      <a href="http://openbrand.sh/" class="product-link" target="_blank" rel="noopener">
+        <div class="product-name">OpenBrand</div>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
